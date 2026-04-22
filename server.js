@@ -2,6 +2,16 @@ console.log("Web serverni boshlash");
 const express = require("express"); //express nima? bu: Node.s uchun server yaratish framework’i, Node.js → oddiy dvigatel Express → tayyor mashina 
 const app = express(); 
 const http = require("http");
+const fs = require("fs");
+
+let user;
+fs.readFile("database/user.json", "utf8", (err, data) => {
+  if (err) {
+    console.log("ERROR:", err);
+  } else {
+    user = JSON.parse(date)
+  }
+});
 
 // 1: kirish kodlari
   //expressga kirib kelayotgan malumotlarga bo'liq bo'lgan kodlar
@@ -16,8 +26,12 @@ app.set("view engine", "ejs"); //BSSR  //.ejs → HTML + JS    //res.render() �
 
 // 4: Routing code
 app.post("/create-item", (req, res) => {
-    console.log(req.body);
-    res.json({test: "success"});
+    // console.log(req.body);
+    // res.json({test: "success"});
+});
+
+app.get('/author', (req, res) => {
+  res.render("author", {user: user } );
 });
 
 app.get("/", function (req , res) {
