@@ -5,13 +5,27 @@ const http = require("http");
 const fs = require("fs");
 
 let user;
+// fs.readFile("database/user.json", "utf8", (err, data) => {
+//   if (err) {
+//     console.log("ERROR:", err);
+//   } else {
+// //     user = JSON.parse(data)
+// //   }
+// // });
+
+
 fs.readFile("database/user.json", "utf8", (err, data) => {
   if (err) {
-    console.log("ERROR:", err);
+    user = [];
   } else {
-    user = JSON.parse(date)
+    try {
+      user = JSON.parse(data || "[]");
+    } catch {
+      user = [];
+    }
   }
 });
+
 
 // 1: kirish kodlari
   //expressga kirib kelayotgan malumotlarga bo'liq bo'lgan kodlar
