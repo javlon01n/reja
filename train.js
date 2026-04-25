@@ -1,3 +1,5 @@
+//A-TASK
+
 let count = 0;
 function number(word, letter){
 for(let i = 0; i <= word.length; i++ ) {
