@@ -1,3 +1,19 @@
+let count = 0;
+function number(word, letter){
+for(let i = 0; i <= word.length; i++ ) {
+    if(word[i] === letter) {
+        count++
+    }
+}
+return count;
+}
+console.log(number("engineer", "e"));
+
+
+
+
+
+
 console.log("Jack Ma maslahatlari");
 const list = [
     "yaxsh talaba bo'ling", //0-20
