@@ -4,7 +4,7 @@ let count = 0;
 function number(word, letter){
 for(let i = 0; i <= word.length; i++ ) {
     if(word[i] === letter) {
-        count++
+        count++;
     }
 }
 return count;
@@ -16,15 +16,15 @@ console.log(number("engineer", "e"));
 
 
 
-// console.log("Jack Ma maslahatlari");
-// const list = [
-//     "yaxsh talaba bo'ling", //0-20
-//     "togri boshliq tanlang va koproq xato qiling", //20-30
-//     "uzingizga ishlashingizni boshlang", //30-40
-//     "siz kuchli bolgan narsalarni qiling", //40-50
-//     "yoshlarga invistitsiya qiling", //50-60
-//     "endi dam oling, foydasi yoq endi", //60
-// ];
+console.log("Jack Ma maslahatlari");
+const list = [
+    "yaxsh talaba bo'ling", //0-20
+    "togri boshliq tanlang va koproq xato qiling", //20-30
+    "uzingizga ishlashingizni boshlang", //30-40
+    "siz kuchli bolgan narsalarni qiling", //40-50
+    "yoshlarga invistitsiya qiling", //50-60
+    "endi dam oling, foydasi yoq endi", //60
+];
 
 // //COLLBACK fungtion
 // function maslahatBering(a, callback) {
@@ -35,9 +35,9 @@ console.log(number("engineer", "e"));
 //     else if(a >40 && a <=50) callback(null, list[3])
 //     else if(a >50 && a <=60) callback(null, list[4])
 //     else {
-//      setInterval(function () {
+//      setTimeout(function () {
 //         callback(null, list[5]);
-//       }, 1000)
+//       }, 3000)
     
 //     }
 // }
@@ -54,26 +54,28 @@ console.log(number("engineer", "e"));
 
 
 //ASYNC fungtion
-// async function maslahatBering(a) {
-//     if(typeof a !== 'number')throw new Error("insert a nomber");
-//     else if(a <= 20) return list[0];
-//     else if(a >20 && a <=30) return list[1];
-//     else if(a >30 && a <=40) return list[2];
-//     else if(a >40 && a <=50) return list[3];
-//     else if(a >50 && a <=60) return list[4];
-//     else {
-//         return new Promise((resolve, reject) => {
-//             setInterval(() => {
-//                 resolve(list[5]);
-//             }, 1000);
-//         });
-//     }
-// }
+async function maslahatBering(a) {
+    if(typeof a !== 'number')throw new Error("insert a nomber");
+    else if(a <= 20) return list[0];
+    else if(a >20 && a <=30) return list[1];
+    else if(a >30 && a <=40) return list[2];
+    else if(a >40 && a <=50) return list[3];
+    else if(a >50 && a <=60) return list[4];
+    else {
+        // return list[5];
+        
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve(list[5]);
+            }, 3000);
+        });
+    }
+}
 
 
-// call via then/catch
+//call via then/catch
 // console.log("passed here 0");
-// maslahatBering(25)
+// maslahatBering(35)
 // .then((data) => {
 //     console.log('javob:', data);
 // })
@@ -84,12 +86,12 @@ console.log(number("engineer", "e"));
 
 
 // call via async/await
-// async function run() {
-//     let javob = await maslahatBering(65);
-//     console.log(javob);
-    // javob = await maslahatBering(31);
-    // console.log(javob);
-    // javob = await maslahatBering(41);
-    // console.log(javob);
-// }
-// run();
+async function run() {
+    let javob = await maslahatBering(25);
+    console.log(javob);
+    javob = await maslahatBering(65);
+    console.log(javob);
+    javob = await maslahatBering(41);
+    console.log(javob);
+}
+run();
