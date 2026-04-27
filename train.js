@@ -1,30 +1,30 @@
 //A-TASK
 
-let count = 0;
-function number(word, letter){
-for(let i = 0; i <= word.length; i++ ) {
-    if(word[i] === letter) {
-        count++;
-    }
-}
-return count;
-}
-console.log(number("engineer", "e"));
+// let count = 0;
+// function number(word, letter){
+// for(let i = 0; i <= word.length; i++ ) {
+//     if(word[i] === letter) {
+//         count++;
+//     }
+// }
+// return count;
+// }
+// console.log(number("engineer", "e"));
 
 
 
 
 
 
-console.log("Jack Ma maslahatlari");
-const list = [
-    "yaxsh talaba bo'ling", //0-20
-    "togri boshliq tanlang va koproq xato qiling", //20-30
-    "uzingizga ishlashingizni boshlang", //30-40
-    "siz kuchli bolgan narsalarni qiling", //40-50
-    "yoshlarga invistitsiya qiling", //50-60
-    "endi dam oling, foydasi yoq endi", //60
-];
+// console.log("Jack Ma maslahatlari");
+// const list = [
+//     "yaxsh talaba bo'ling", //0-20
+//     "togri boshliq tanlang va koproq xato qiling", //20-30
+//     "uzingizga ishlashingizni boshlang", //30-40
+//     "siz kuchli bolgan narsalarni qiling", //40-50
+//     "yoshlarga invistitsiya qiling", //50-60
+//     "endi dam oling, foydasi yoq endi", //60
+// ];
 
 // //COLLBACK fungtion
 // function maslahatBering(a, callback) {
@@ -54,23 +54,23 @@ const list = [
 
 
 //ASYNC fungtion
-async function maslahatBering(a) {
-    if(typeof a !== 'number')throw new Error("insert a nomber");
-    else if(a <= 20) return list[0];
-    else if(a >20 && a <=30) return list[1];
-    else if(a >30 && a <=40) return list[2];
-    else if(a >40 && a <=50) return list[3];
-    else if(a >50 && a <=60) return list[4];
-    else {
-        // return list[5];
+// async function maslahatBering(a) {
+//     if(typeof a !== 'number')throw new Error("insert a nomber");
+//     else if(a <= 20) return list[0];
+//     else if(a >20 && a <=30) return list[1];
+//     else if(a >30 && a <=40) return list[2];
+//     else if(a >40 && a <=50) return list[3];
+//     else if(a >50 && a <=60) return list[4];
+//     else {
+//         // return list[5];
         
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(list[5]);
-            }, 3000);
-        });
-    }
-}
+//         return new Promise((resolve, reject) => {
+//             setTimeout(() => {
+//                 resolve(list[5]);
+//             }, 3000);
+//         });
+//     }
+// }
 
 
 //call via then/catch
@@ -86,12 +86,20 @@ async function maslahatBering(a) {
 
 
 // call via async/await
-async function run() {
-    let javob = await maslahatBering(25);
-    console.log(javob);
-    javob = await maslahatBering(65);
-    console.log(javob);
-    javob = await maslahatBering(41);
-    console.log(javob);
-}
-run();
+// async function run() {
+//     let javob = await maslahatBering(25);
+//     console.log(javob);
+//     javob = await maslahatBering(65);
+//     console.log(javob);
+//     javob = await maslahatBering(41);
+//     console.log(javob);
+// }
+// run();
+
+// const user = {
+//     name: "Mark",
+//     age: 30,
+//     job: "it inginering"
+// };
+
+// console.log(user)
