@@ -96,10 +96,17 @@
 // }
 // run();
 
-// const user = {
-//     name: "Mark",
-//     age: 30,
-//     job: "it inginering"
-// };
+function countDigits(str) {
+  let count = 0;
 
-// console.log(user)
+  for (let char of str) {
+    if (char >= '0' && char <= '9') {
+      count++;
+    }
+  }
+
+  return count;
+}
+ let result = countDigits("ad2a54y79wet0sfgb9");
+ console.log(result);
+ 
