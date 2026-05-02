@@ -34,16 +34,11 @@ app.set("view engine", "ejs"); //BSSR  //.ejs â†’ HTML + JS    //res.render() â†
 
 // 4: Routing code
 app.post("/create-item", (req, res) => {
-   console.log('user entered /create-item');
+   console.log('user entered /create-item'); //api nomi reja ejs bilan ulash
     console.log(req.body);
     const new_reja = req.body.reja;
-    db.collection("plans").insertOne({reja: new_reja}, (err, data) => {
-      if(err) {
-        console.log(err);
-        res.end("something went wrong");        
-      } else {
-        res.end("successfully added");
-      }
+    db.collection("plans").insertOne({reja: new_reja}, (err, data) => { // dakumention boyichainsertOne bizga gollbek qaytaradi 
+     res.json(data.ops[0]); 
     });
 });
 
@@ -54,7 +49,7 @@ app.post("/create-item", (req, res) => {
 
 app.get("/", function (req , res) {
   console.log('user entered /');
-  db.collection("plans")
+  db.collection("plans") 
   .find()
   .toArray((err, data) => {
     if (err) {
