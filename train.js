@@ -63,19 +63,7 @@ s1.qoldiq();
 
 //b-TASK
 
-function countDigits(str) {
-  let count = 0;
-
-  for (let char of str) {
-    if (char >= '0' && char <= '9') {
-      count++;
-    }
-  }
-
-  return count;
-}
- let result = countDigits("ad2a54y79wet0sfgb9");
- console.log(result);
+// 
 
 
 //A-TASK

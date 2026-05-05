@@ -1,3 +1,6 @@
+
+
+
 console.log(" FrontEnd JS ishga tushdi");
 
 function itemTemplate(item) {
@@ -14,8 +17,9 @@ function itemTemplate(item) {
 }
 
 
-let createField = document.getElementById("create-field");
+
 document.getElementById("create-form").addEventListener("submit", function (e) {
+  let createField = document.getElementById("create-field");
   e.preventDefault();
 console.log("2")
   axios
@@ -50,6 +54,30 @@ document.addEventListener("click", function(e) {
     }
     //edit oper
     if(e.target.classList.contains("edit-me")){
-        alert("siz edit tugmasini bosdingiz");
+        let userInput = prompt("O'zgartirish kiriting", 
+          e.target.parentElement.parentElement.querySelector(".item-text").innerHTML); 
+          if (userInput) {
+            axios
+            .post("/edit-item", {
+              id: e.target.getAttribute("data-id"),
+              new_input: userInput,
+            }) .then((response) => {
+              console.log(response.data);
+              e.target.parentElement.parentElement.querySelector(   //frontendga o'zgarishni kiritish
+                ".item-text"
+              ).innerHTML = userInput;
+            })
+              .catch(err => {
+                console.log("Iltmos qaytadanxarakat qilib koring"); 
+              }); 
+          }
     }
 });
+
+document.getElementById("clean-all").addEventListener("click", function() {
+  axios.post("/delete-all", { delete_all: true})
+  .then(response => {
+    alert(response.data.state);
+    document.location.reload();
+  })
+})

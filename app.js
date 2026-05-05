@@ -50,9 +50,30 @@ app.post("/delete-item", (req, res) => {
   function (err, data) {
     res.json({state: "success"})
   }
- )
+ );
 }); 
 
+
+app.post("/edit-item", (req, res) => {       //golbek edit-item ulash
+  const data = req.body;
+  console.log(data);
+  db.collection("plans").findOneAndUpdate //databasega ulab edit qilish (findOneAndUpdate)
+  ( { _id: new mongodb.ObjectId(data.id)},
+  { $set: { reja: data.new_input }},
+  function (err, data) {
+    res.json({state: "success"});
+  } );
+
+
+
+app.post("/delete-all", (req, res) =>{        //hamma rejalarni ochirishni momgodbga ulash
+  db.collection("plans").deleteMany(function() {
+    res.json({ state: "hamma rejalar ochirilsinmi"});
+  });
+});
+
+  
+}); 
 // app.get('/author', (req, res) => {
 
 //   res.render("author", {user: user } );
