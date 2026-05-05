@@ -1,60 +1,89 @@
+//D-TASK 
+
+function checkContent(a,b) {
+
+    if (a.length !== b.length) {
+    return false;
+    }
+    let aArr = a.split("");
+    let bArr = b.split("");
+
+    aArr.sort();
+    bArr.sort();
+
+    let newA = aArr.join("");
+    let newB = bArr.join("");
+
+    return newA === newB;
+}
+
+
+console.log(checkContent ("mitgroup","gmtiprou"));
+
+
+
+
+
+
+
+
 
 //c-TASK
 
-class Shop{
-    #non;
-    #lagmon;
-    #cola;
+// class Shop{
+//     #non;
+//     #lagmon;
+//     #cola;
 
-    constructor(non, lagmon, cola){
-        this.#non = non;
-        this.#lagmon = lagmon;
-        this.#cola = cola;
-    }
+//     constructor(non, lagmon, cola){
+//         this.#non = non;
+//         this.#lagmon = lagmon;
+//         this.#cola = cola;
+//     }
 
-    time(){
-        return moment().format("HH:mm:");
-    }
+//     time(){
+//         return moment().format("HH:mm:");
+//     }
 
-    qoldiq(){
-        console.log(`Hozir ${this.time()}'da ${this.#non}ta non, ${this.#lagmon}ta lag'mon va ${this.#cola}ta cola mavjud`);
-    }
+//     qoldiq(){
+//         console.log(`Hozir ${this.time()}'da ${this.#non}ta non, ${this.#lagmon}ta lag'mon va ${this.#cola}ta cola mavjud`);
+//     }
 
-    sotish(name, number){
-    if(name === "non"){
-        this.#non -= number;
-    }else if(name === "lagmon"){
-        this.#lagmon -= number;
-    }else if(name === "cola"){
-        this.#cola -= number;
-    }else return console.log("Bunaqa mahsulot hozircha sotilmaydi!")
+//     sotish(name, number){
+//     if(name === "non"){
+//         this.#non -= number;
+//     }else if(name === "lagmon"){
+//         this.#lagmon -= number;
+//     }else if(name === "cola"){
+//         this.#cola -= number;
+//     }else return console.log("Bunaqa mahsulot hozircha sotilmaydi!")
     
-    console.log(`${name} ${number} dona sotildi`);
+//     console.log(`${name} ${number} dona sotildi`);
     
-}
+// }
 
-    qabul(name, number){
-    if(name === "non"){
-        this.#non += number;
-    }else if(name === "lagmon"){
-        this.#lagmon += number;
-    }else if(name === "cola"){
-        this.#cola += number;
-    }else return console.log("Bu mahsulot Qabul qilinmaydi!")
+//     qabul(name, number){
+//     if(name === "non"){
+//         this.#non += number;
+//     }else if(name === "lagmon"){
+//         this.#lagmon += number;
+//     }else if(name === "cola"){
+//         this.#cola += number;
+//     }else return console.log("Bu mahsulot Qabul qilinmaydi!")
     
 
-    console.log(`${name} ${number} dona qabul qilindi`);
-    };
-}
+//     console.log(`${name} ${number} dona qabul qilindi`);
+//     };
+// }
 
 
-const shop = new Shop(2, 10, 7)
+// const shop = new Shop(2, 10, 7)
 
-s1.qoldiq();
-s1.sotish("non", 1);
-s1.sotish("cola", 5);
-s1.qabul("lagmon", 25);
-s1.qoldiq();
+// s1.qoldiq();
+// s1.sotish("non", 1);
+// s1.sotish("cola", 5);
+// s1.qabul("lagmon", 25);
+// s1.qoldiq();
 
 
 
