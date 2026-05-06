@@ -63,17 +63,16 @@ app.post("/edit-item", (req, res) => {       //golbek edit-item ulash
   function (err, data) {
     res.json({state: "success"});
   } );
-
+}); 
 
 
 app.post("/delete-all", (req, res) =>{        //hamma rejalarni ochirishni momgodbga ulash
   db.collection("plans").deleteMany(function() {
-    res.json({ state: "hamma rejalar ochirilsinmi"});
+    res.json({ state: "hamma rejalar ochirildi"});
   });
 });
 
   
-}); 
 // app.get('/author', (req, res) => {
 
 //   res.render("author", {user: user } );
