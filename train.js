@@ -1,24 +1,50 @@
-//D-TASK 
+//E-TASK 
 
-function checkContent(a,b) {
+function getReverse ( a ) {
 
-    if (a.length !== b.length) {
-    return false;
-    }
-    let aArr = a.split("");
-    let bArr = b.split("");
+    const reversedStr = a.split("").reverse().join("")
+    return reversedStr;
 
-    aArr.sort();
-    bArr.sort();
-
-    let newA = aArr.join("");
-    let newB = bArr.join("");
-
-    return newA === newB;
 }
 
+console.log(getReverse ("hello"));
 
-console.log(checkContent ("mitgroup","gmtiprou"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//D-TASK 
+
+// function checkContent(a,b) {
+
+//     if (a.length !== b.length) {
+//     return false;
+//     }
+//     let aArr = a.split("");
+//     let bArr = b.split("");
+
+//     aArr.sort();
+//     bArr.sort();
+
+//     let newA = aArr.join("");
+//     let newB = bArr.join("");
+
+//     return newA === newB;
+// }
+
+
+// console.log(checkContent ("mitgroup","gmtiprou"));
 
 
 
