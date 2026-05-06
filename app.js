@@ -68,7 +68,7 @@ app.post("/edit-item", (req, res) => {       //golbek edit-item ulash
 
 app.post("/delete-all", (req, res) =>{        //hamma rejalarni ochirishni momgodbga ulash
   db.collection("plans").deleteMany(function() {
-    res.json({ state: "hamma rejalar ochirildi"});
+    res.json({ state: "hamma rejalar ochiriladi"});
   });
 });
 

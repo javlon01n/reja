@@ -40,7 +40,7 @@
     
 
         .bnd {
-            background: linear-gradient(90deg, #ff1414, #4f0000);
+            background: linear-gradient(90deg, #f10c0c, #450000);
             color: white;
             font-weight: 600;
             font-size: 25px;
@@ -198,6 +198,11 @@
             pointer-events: none;
         }
 
+
+
+        .list-group-item {
+  background: linear-gradient(90deg, #fdfdfd, #e6e6e6);
+}
 
         /* button_css */
 
