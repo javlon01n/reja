@@ -1,25 +1,33 @@
-//E-TASK 
+//F-TASK 
 
-function getReverse ( a ) {
-
-    const reversedStr = a.split("").reverse().join("")
-    return reversedStr;
-
+function findDoublers (a) {
+    let seen = "";
+    for (let i =0;
+    i < a.length; i++) {
+    let letter = a[i];
+    if (seen.includes(letter)) {
+        return true;
+    }
+    seen += letter;
+    }
+    return false;
 }
 
-console.log(getReverse ("hello"));
+console.log(findDoublers("hello"));
 
 
 
 
 
+// //E-TASK 
 
+// function getReverse ( a ) {
 
+//     const reversedStr = a.split("").reverse().join("")
+//     return reversedStr;
+// }
 
-
-
-
-
+// console.log(getReverse ("hello"));
 
 
 
