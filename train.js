@@ -1,19 +1,46 @@
-//F-TASK 
+//G-TASK
 
-function findDoublers (a) {
-    let seen = "";
-    for (let i =0;
-    i < a.length; i++) {
-    let letter = a[i];
-    if (seen.includes(letter)) {
-        return true;
+function getHighestIndex(arr) {
+
+    let max = arr[0];
+    let maxIndex = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+
+        if (arr[i] > max) {
+
+            max = arr[i];
+            maxIndex = i;
+
+        }
     }
-    seen += letter;
-    }
-    return false;
+
+    return maxIndex;
 }
 
-console.log(findDoublers("hello"));
+console.log(getHighestIndex([5, 212, 122, 21, 8]));
+
+
+
+
+
+
+//F-TASK 
+
+// function findDoublers (a) {
+//     let seen = "";
+//     for (let i =0;
+//     i < a.length; i++) {
+//     let letter = a[i];
+//     if (seen.includes(letter)) {
+//         return true;
+//     }
+//     seen += letter;
+//     }
+//     return false;
+// }
+
+// console.log(findDoublers("hello"));
 
 
 
