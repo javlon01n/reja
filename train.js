@@ -1,24 +1,46 @@
-//G-TASK
 
-function getHighestIndex(arr) {
 
-    let max = arr[0];
-    let maxIndex = 0;
+//H-TASK
 
-    for (let i = 0; i < arr.length; i++) {
+function getPositive(arr) {
 
-        if (arr[i] > max) {
+    let result = ""
 
-            max = arr[i];
-            maxIndex = i;
+    for (let i =0; i < arr.length; i++){
 
-        }
+        if (arr[i] > 0)
+            result += arr[i]
     }
-
-    return maxIndex;
+      return result
 }
 
-console.log(getHighestIndex([5, 212, 122, 21, 8]));
+
+
+console.log(getPositive([1, -4, 2]));
+
+
+
+//G-TASK
+
+// function getHighestIndex(arr) {
+
+//     let max = arr[0];
+//     let maxIndex = 0;
+
+//     for (let i = 0; i < arr.length; i++) {
+
+//         if (arr[i] > max) {
+
+//             max = arr[i];
+//             maxIndex = i;
+
+//         }
+//     }
+
+//     return maxIndex;
+// }
+
+// console.log(getHighestIndex([5, 212, 122, 21, 8]));
 
 
 
