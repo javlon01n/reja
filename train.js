@@ -1,22 +1,60 @@
 
 
-//H-TASK
+// I-TASK
 
-function getPositive(arr) {
 
-    let result = ""
+function majorityElement(arr) {
 
-    for (let i =0; i < arr.length; i++){
+    let maxCount = 0;
+    let mostRepeated = arr[0];
 
-        if (arr[i] > 0)
-            result += arr[i]
+    for (let i = 0; i < arr.length; i++) {
+
+        let count = 0;
+
+        for (let j = 0; j < arr.length; j++) {
+
+            if (arr[i] === arr[j]) {
+                count++;
+            }
+
+        }
+
+        if (count > maxCount) {
+            maxCount = count;
+            mostRepeated = arr[i];
+        }
+
     }
-      return result
+
+    return mostRepeated;
 }
 
+console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
 
 
-console.log(getPositive([1, -4, 2]));
+
+
+
+
+
+//H-TASK
+
+// function getPositive(arr) {
+
+//     let result = ""
+
+//     for (let i =0; i < arr.length; i++){
+
+//         if (arr[i] > 0)
+//             result += arr[i]
+//     }
+//       return result
+// }
+
+
+
+// console.log(getPositive([1, -4, 2]));
 
 
 
