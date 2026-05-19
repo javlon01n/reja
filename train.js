@@ -1,36 +1,64 @@
+// J-TASK
+
+
+function findLongestWord(text) {
+
+    let words = text.split(" ");
+    
+    let longest = "";
+
+    for (let i = 0; i < words.length; i++) {
+
+        if (words[i].length > longest.length) {
+            longest = words[i];
+        }
+
+    }
+
+    return longest;
+}
+
+console.log(findLongestWord("I came from Uzbekistan!"));
+
+
+
+
+
+
+
 
 
 // I-TASK
 
 
-function majorityElement(arr) {
+// function majorityElement(arr) {
 
-    let maxCount = 0;
-    let mostRepeated = arr[0];
+//     let maxCount = 0;
+//     let mostRepeated = arr[0];
 
-    for (let i = 0; i < arr.length; i++) {
+//     for (let i = 0; i < arr.length; i++) {
 
-        let count = 0;
+//         let count = 0;
 
-        for (let j = 0; j < arr.length; j++) {
+//         for (let j = 0; j < arr.length; j++) {
 
-            if (arr[i] === arr[j]) {
-                count++;
-            }
+//             if (arr[i] === arr[j]) {
+//                 count++;
+//             }
 
-        }
+//         }
 
-        if (count > maxCount) {
-            maxCount = count;
-            mostRepeated = arr[i];
-        }
+//         if (count > maxCount) {
+//             maxCount = count;
+//             mostRepeated = arr[i];
+//         }
 
-    }
+//     }
 
-    return mostRepeated;
-}
+//     return mostRepeated;
+// }
 
-console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
+// console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
 
 
 
